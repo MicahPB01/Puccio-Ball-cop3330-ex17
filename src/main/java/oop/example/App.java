@@ -7,6 +7,8 @@ public class App
 {
     public static void main( String[] args )
     {
+        App myApp = new App();
+
         Scanner input = new Scanner(System.in);
         double weight = 0;
         int gender;
@@ -16,15 +18,15 @@ public class App
         double rValue = 0.73;
         double BAC;
 
-        weight = weight(input);
+        weight = myApp.weight(input);
 
-        gender = gender(input);
+        gender = myApp.gender(input);
 
-        numberOfDrinks = drinks(input);
+        numberOfDrinks = myApp.drinks(input);
 
-        volume = volume(input);
+        volume = myApp.volume(input);
 
-        timeElapsed = timeElapsed(input);
+        timeElapsed = myApp.timeElapsed(input);
 
         if(gender == 1)   {
             rValue = 0.66;
@@ -40,9 +42,9 @@ public class App
         else   {
             System.out.printf("It is legal for you to drive,\n");
         }
-        
+
     }
-    public static double weight(Scanner input)   {
+    public double weight(Scanner input)   {
         System.out.printf("What is your weight? (lbs) ");
         try {
             return Double.parseDouble(input.nextLine());
@@ -54,7 +56,7 @@ public class App
         return 0;
     }
 
-    public static int gender(Scanner input)   {
+    public int gender(Scanner input)   {
         System.out.printf("What is your gender? (0 = Male | 1 = Female) ");
         try {
             return Integer.parseInt(input.nextLine());
@@ -66,7 +68,7 @@ public class App
         return 0;
     }
 
-    public static int drinks(Scanner input)   {
+    public int drinks(Scanner input)   {
         System.out.printf("How many drinks did you have? ");
         try {
             return Integer.parseInt(input.nextLine());
@@ -78,7 +80,7 @@ public class App
         return 0;
     }
 
-    public static double volume(Scanner input)   {
+    public double volume(Scanner input)   {
         System.out.printf("How many ounces of alcohol did you consume? ");
         try {
             return Double.parseDouble(input.nextLine());
@@ -89,7 +91,7 @@ public class App
         }
         return 0;
     }
-    public static int timeElapsed(Scanner input)   {
+    public int timeElapsed(Scanner input)   {
         System.out.printf("How many hours has it been since your last drink? ");
         try {
             return Integer.parseInt(input.nextLine());
